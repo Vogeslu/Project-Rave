@@ -22,7 +22,7 @@
     "threads": "^0.11.0"
   },
   "devDependencies": {
-    "electron": "^2.0.2",
+    "electron": "^7.2.4",
     "electron-builder": "^20.15.1",
     "electron-packager": "^12.1.0",
     "electron-winstaller": "^2.6.4"
