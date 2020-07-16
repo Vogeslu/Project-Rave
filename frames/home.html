@@ -1,0 +1,49 @@
+<div class="frame frame-home">
+    <div class="inner"></div>
+    <script>
+        const frame = $(".frame.frame-home");
+        const {remote,ipcRenderer,app} = require('electron');
+        var libraries = [];
+        ipcRenderer.send("libraries",{});
+        ipcRenderer.on("libraries",function(event, data) {
+            libraries = data;
+            if(Object.keys(data).length===0) frame.find(".inner").html("<div class='no-libraries'><span class='message'>No Media Sources found</span><div class='add-library'>Add new Source Library</div></div>")
+            else ipcRenderer.send("tracks",{});
+        });
+
+        frame.on("click",".add-library",function() {
+            ipcRenderer.send("select-library",{});
+        });
+
+        ipcRenderer.on("add-library",function(event, data) {
+            libraries.push(data.library);
+            frame.find(".inner").html("");
+        });
+
+        ipcRenderer.on("tracks",function(event, data) {
+            const inner = frame.find(".inner");
+            inner.html("<div class='tracklist'></div>");
+            const tracklist = inner.find(".tracklist");
+            data.tracks.forEach((track)=>{
+                tracklist.append("<div class='track' data-queue='all' data-sid='"+track["source-identifier"]+"' data-id='"+track.identifier+"'><div class='play-button'><i class='material-icons'>play_circle_outline</i></div><div class='title'>"+track.title+"</div><div class='artist'>"+(track.artist.length>20?track.artist.substring(0,20)+"...":track.artist)+"</div><div class='album'>"+(track.album.length>20?track.album.substring(0,20)+"...":track.album)+"</div></div>");
+            });
+        });
+
+        frame.on("click",".track",function() {
+            const sid = $(this).data("sid");
+            const id = $(this).data("id");
+            const queue = $(this).data("queue");
+
+            ipcRenderer.send("play-track",{sid:sid,id:id,queue:queue});
+        });
+
+        ipcRenderer.on("play-track",function(event,data) {
+            const identifier = data.track.identifier;
+            const tracklist = frame.find(".inner .tracklist");
+            tracklist.find(".track").removeClass("playing");
+            tracklist.find(".track").each(function(){
+                if($(this).data("id")===identifier) $(this).addClass("playing");
+            });
+        });
+    </script>
+</div>

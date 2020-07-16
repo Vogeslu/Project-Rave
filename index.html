@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RaveApp</title>
+    <link rel="stylesheet" href="./assets/fonts/montserrat/font.css">
+    <link rel="stylesheet" href="./assets/fonts/material/font.css">
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="./assets/js/jquery-ui/jquery-ui.min.css">
+    <script type="text/javascript" src="./assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+
+<div id="headbar">
+    <div class="drag"></div>
+    <div class="item minimize"><img src="./assets/icons/minimize.svg"></div>
+    <div class="item resize"><img src="./assets/icons/resize.svg"></div>
+    <div class="item close"><img src="./assets/icons/close.svg"></div>
+</div>
+<div id="start-screen">
+    <div class="logo-field">
+        <div class="logo"></div>
+        <div class="name-holder">
+            <span class="big">RaveApp</span>
+            <span class="small">by FluceMedia</span>
+        </div>
+    </div>
+</div>
+<div id="login-screen">
+    <div class="login-sidebar">
+        <div class="logo-field">
+            <div class="logo"></div>
+            <div class="name-holder">
+                <span class="big">RaveApp</span>
+                <span class="small">by FluceMedia</span>
+            </div>
+        </div>
+        <div class="login-frame login-content">
+            <div class="title">Sign In</div>
+            <div class="input-group">
+                <div class="label">Username</div>
+                <div class="input-frame">
+                    <div class="icon"><i class="material-icons">person</i></div>
+                    <input type="text" class="input" placeholder="Username">
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="label">Password</div>
+                <div class="input-frame">
+                    <div class="icon"><i class="material-icons">lock</i></div>
+                    <input type="password" class="input" placeholder="Password">
+                </div>
+            </div>
+            <div class="forgot-password">Forgot password?</div>
+            <div class="sign-in">Sign in</div>
+            <div class="no-account">Don't have an account? Sign up</div>
+            <div class="skip-login">Skip login</div>
+        </div>
+        <div class="login-frame signup-content">
+            <div class="title">Sign Up</div>
+            <div class="input-group">
+                <div class="label">E-Mail</div>
+                <div class="input-frame">
+                    <div class="icon"><i class="material-icons">email</i></div>
+                    <input type="email" class="input" placeholder="E-Mail">
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="label">Username</div>
+                <div class="input-frame">
+                    <div class="icon"><i class="material-icons">person</i></div>
+                    <input type="text" class="input" placeholder="Username">
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="label">Password</div>
+                <div class="input-frame">
+                    <div class="icon"><i class="material-icons">lock</i></div>
+                    <input type="password" class="input" placeholder="Password">
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="label">Repeat Password</div>
+                <div class="input-frame">
+                    <div class="icon"><i class="material-icons">lock</i></div>
+                    <input type="password" class="input" placeholder="Repeat Password">
+                </div>
+            </div>
+            <div class="sign-up">Sign up</div>
+            <div class="have-account">I have an account! Sign in</div>
+        </div>
+    </div>
+    <div class="slider"></div>
+</div>
+<div id="main-screen">
+    <div class="sidebar-overlay">
+        <div class="big-cover item">
+            <div class="background"><div class="overlay"></div></div>
+            <div class="inner no-clear"></div>
+            <div class="song-details no-clear">
+                <div class="song-name"></div>
+                <div class="song-interpret"></div>
+            </div>
+            <div class="song-actions no-clear">
+                <div class="action song-previous"><i class="material-icons">skip_previous</i></div>
+                <div class="action song-play"><i class="material-icons">play_arrow</i></div>
+                <div class="action song-next"><i class="material-icons">skip_next</i></div>
+            </div>
+        </div>
+        <div class="sidebar no-clear item">
+            <div class="user">
+                <div class="profile-picture"></div>
+                <div class="details">
+                    <div class="name">Guest</div>
+                    <div class="email">Not logged in</div>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="item">My Profile</div>
+                <div class="item">Settings</div>
+                <div class="divider"></div>
+                <div class="item">Media Sources</div>
+                <div class="item">Playlists</div>
+                <div class="item">Streams</div>
+                <div class="item">Podcasts</div>
+            </div>
+            <div class="logout">Logout</div>
+            <div class="version">RaveApp v0.1a</div>
+        </div>
+    </div>
+    <div class="top-field">
+        <div class="top-bar"></div>
+        <div class="logo-field">
+            <div class="logo"></div>
+            <div class="name-holder">
+                <span class="big">RaveApp</span>
+                <span class="small">by FluceMedia</span>
+            </div>
+        </div>
+        <div class="navigation">
+            <div class="item" data-target="home" data-index="-150">Home</div>
+            <div class="item" data-target="dashboard" data-index="0">Dashboard</div>
+            <div class="item" data-target="profile" data-index="150">My Profile</div>
+        </div>
+        <div class="user-field">
+            <div class="user-profile"></div>
+            <div class="item friends"><i class="material-icons">people</i></div>
+            <div class="item notifications">
+                <i class="material-icons">notifications</i>
+                <div class="notification-menu">
+                    <div class="icon-background"></div>
+                    <div class="title"><span class="title-content">New Notifications</span><span class="notification-badge">0</span></div>
+                    <div class="separator"></div>
+                    <div class="notification-list">
+                        <div class="no-notifications">Recent notifications will appear here</div>
+                    </div>
+                </div>
+            </div>
+            <div class="item menu"><i class="material-icons">menu</i></div>
+        </div>
+    </div>
+    <div class="content"></div>
+    <div class="spinner-frame" style="display: none">
+        <div class="spinner-holder">
+            <div class="loader">
+                <svg class="spinner" width="35px" height="35px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="media-field">
+        <div class="song-cover" style="background-image: url(https://picsum.photos/200/300/?random)"></div>
+        <div class="song-info">
+            <div class="song-name">Lorem ipsum</div>
+            <div class="song-interpret">Dolor sit</div>
+        </div>
+        <div class="song-panel hidden">
+            <div class="actions song-actions">
+                <div class="action song-previous"><i class="material-icons">skip_previous</i></div>
+                <div class="action song-play"><i class="material-icons">play_arrow</i></div>
+                <div class="action song-next"><i class="material-icons">skip_next</i></div>
+            </div>
+            <div class="seek-bar-field">
+                <div class="seek-bar-text song-position">0:00</div>
+                <div class="seek-bar-holder">
+                    <div class="seek-bar-slider"><div class="seek-bar-position"></div></div>
+                    <div class="seek-bar"></div>
+                </div>
+                <div class="seek-bar-text song-length">13:37</div>
+            </div>
+        </div>
+        <div class="actions media-actions">
+            <div class="action media-shuffle"><i class="material-icons">shuffle</i></div>
+            <div class="action media-repeat"><i class="material-icons">repeat</i></div>
+            <div class="action media-volume">
+                <div class="volume-slider-frame">
+                    <div class="volume-slider-inner">
+                        <div class="volume-slider-holder"><div class="volume-slider-position"></div></div>
+                        <div class="volume-slider"></div>
+                    </div>
+                </div>
+                <i class="material-icons">volume_up</i>
+            </div>
+            <div class="action media-queue"><i class="material-icons">format_list_bulleted</i></div>
+            <div class="action media-more"><i class="material-icons">more_horiz</i></div>
+        </div>
+    </div>
+</div>
+<script src="./assets/js/main.js"></script>
+</body>
+</html>
